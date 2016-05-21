@@ -164,8 +164,9 @@ var handle_get = function (req, res) {
     ts = new Date().getTime()
     console.log( ts )
     state = "no-coin" ;
-
-    page( req, res, state, ts ) ;
+    res.status=200;
+    res({result:"hello"});
+   // page( req, res, state, ts ) ;
 }
 
 app.set('port', (process.env.PORT || 5000));
