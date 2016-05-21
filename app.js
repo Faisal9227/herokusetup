@@ -1,4 +1,3 @@
-
 /**
 
 Mighty Gumball, Inc.
@@ -165,13 +164,31 @@ var handle_get = function (req, res) {
     console.log( ts )
     state = "no-coin" ;
 
-    page( req, res, state, ts ) ;
+   // page( req, res, state, ts ) ;
 }
 
+var user = {
+   "user4" : {
+      "name" : "mohit",
+      "password" : "password4",
+      "profession" : "teacher",
+      "id": 4
+   }
+}
+
+
+var gett = function (req, res){
+data={};
+ data["user4"] = user["user4"];
+       console.log( data );
+       res.end( JSON.stringify(data));
+
+}
 app.set('port', (process.env.PORT || 5000));
 
 app.post("*", handle_post );
 //app.get( "*", handle_get ) ;
+app.get("/test",gett)
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
