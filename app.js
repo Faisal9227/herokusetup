@@ -164,15 +164,14 @@ var handle_get = function (req, res) {
     ts = new Date().getTime()
     console.log( ts )
     state = "no-coin" ;
-    res.status=200;
-    res({result:"hello"});
-   // page( req, res, state, ts ) ;
+
+    page( req, res, state, ts ) ;
 }
 
-app.set('port', (process.env.PORT));
+app.set('port', (process.env.PORT || 5000));
 
 app.post("*", handle_post );
-app.get( "*", handle_get ) ;
+//app.get( "*", handle_get ) ;
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
