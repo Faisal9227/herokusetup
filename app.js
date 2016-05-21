@@ -169,7 +169,7 @@ var handle_get = function (req, res) {
    // page( req, res, state, ts ) ;
 }
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT));
 
 app.post("*", handle_post );
 app.get( "*", handle_get ) ;
