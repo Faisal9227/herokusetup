@@ -25,7 +25,7 @@ var Client = require('node-rest-client').Client;
 
 var app = express();
 app.use(express.bodyParser());
-app.use("/images", express.static(__dirname + '/images'));
+/*app.use("/images", express.static(__dirname + '/images'));
 handlebars  = require('express3-handlebars');
 hbs = handlebars.create();
 app.engine('handlebars', hbs.engine);
@@ -44,8 +44,8 @@ var db_pwd  = "pwd" ;
 var db_name = "db" ;
 */
 
-
-var db_host = "52.36.216.12" ;
+/*
+var db_host = "52.37.112.11" ;
 var db_port = "27017" ;
 var db_name = "test" ;
 
@@ -215,32 +215,28 @@ var handle_post = function (req, res, next) {
     }  
   
 }
-
-var handle_get = function (req, res, next) {
-    console.log( "Get: ..." ) ;
-    ts = new Date().getTime()
-    console.log( ts )
-    state = "no-coin" ;
-    page( req, res, state, ts ) ;
+*/
+/*var handle_get = function (req, res, next) {
+    console.log( "Hello World" ) ;
+  //  ts = new Date().getTime()
+    //console.log( ts )
+   // state = "no-coin" ;
+    //page( req, res, state, ts ) ;
+	res.status=200;
+	res.send({result:"Hello World"});
 }
-
-
-/*  Handlebars Test using Home template 
-
-app.get('/', function (req, res, next) {
-    res.render('home', {
-        showTitle: true,
-        helpers: {
-            foo: function () { return 'foo!'; },
-            bar: function () { return 'bar!'; }
-        }
-    });
-});
 
 */
 
-app.get('/', handle_get ) ;
-app.post('/', handle_post ) ;
+
+app.get('/', function (req, res, next) {
+    res.status=200;
+	res.send({result:"Hello World"});
+});
+
+
+//app.get('/', handle_get ) ;
+/*app.post('/', handle_post ) ;*/
 app.set('port', (process.env.PORT || 5000));
 
 db_init(function (err, results) {
@@ -254,7 +250,6 @@ db_init(function (err, results) {
    });
  }
 });
-
 
 
 /**
