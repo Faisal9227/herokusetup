@@ -18,13 +18,13 @@ Serial# 1234998871109
 
 
 
-var crypto = require('crypto');
-var fs = require('fs');
+//var crypto = require('crypto');
+//var fs = require('fs');
 var express = require('express');
 var Client = require('node-rest-client').Client;
 
 var app = express();
-app.use(express.bodyParser());
+//app.use(express.bodyParser());
 /*app.use("/images", express.static(__dirname + '/images'));
 handlebars  = require('express3-handlebars');
 hbs = handlebars.create();
