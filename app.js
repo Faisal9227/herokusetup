@@ -191,16 +191,18 @@ var url = "mongodb://52.36.216.12:27017,52.11.239.130:27017,52.37.112.11:27017/t
         var cursor =db.collection('mycol').find();
         var doc_total = {};
         var index = 0;
+	res.end(JSON.stringify({"result":"Hello World"});//(doc_total),null,4));
+/*
         cursor.each(function(err, doc) {
           console.log("Doc is "+doc)
           if (doc != null) {
              doc_total[index++] = doc;
           } else {
               db.close();
-              res.end(JSON.stringify({"result: " :"Hello World"});	//JSON.stringify((doc_total),null,4));
+              res.end(JSON.stringify((doc_total),null,4));
           }
        });
-    });
+    });*/
 }       
 
 
