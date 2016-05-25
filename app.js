@@ -45,7 +45,7 @@ var db_name = "db" ;
 */
 
 
-var db_host = "52.11.239.130" ;
+var db_host = "52.37.112.11" ;
 var db_port = "27017" ;
 var db_name = "test" ;
 
